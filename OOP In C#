@@ -1,0 +1,72 @@
+//Constructor and deconstructer in the OOP
+ using System;
+namespace oops
+{
+    class customer
+    {
+        // Member Variables
+        public int x, y;
+        //constuctor for  initializing fields
+        customer()
+        {
+            Console.WriteLine("Fields inititalized");
+            x = 10;
+        }
+        //method for get field
+        public void getData()
+        {
+            y = x * x;
+            Console.WriteLine(y);
+        }
+        //method to release resource explicitly
+        public void Dispose()
+        {
+            Console.WriteLine("Fields cleaned");
+            x = 0;
+            y = 0;
+        }
+        //destructor
+        ~customer()
+        {
+            Dispose();
+        }
+         //Entry point
+        static void Main(string[] args)
+        {
+            //instance created
+            customer obj = new customer();
+
+            obj.getData();
+
+        }
+    }
+}
+
+
+//Function overloading
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static int PlusMethod(int x, int y)
+    {
+      return x + y;
+    }
+
+    static double PlusMethod(double x, double y)
+    {
+      return x + y;
+    }
+
+    static void Main(string[] args)
+    {
+      int myNum1 = PlusMethod(8, 5);
+      double myNum2 = PlusMethod(4.3, 6.26);
+      Console.WriteLine("Int: " + myNum1);
+      Console.WriteLine("Double: " + myNum2);
+    }  
+  }
+}
+
